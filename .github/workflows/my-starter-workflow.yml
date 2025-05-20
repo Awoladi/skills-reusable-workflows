@@ -1,11 +1,7 @@
-name: Reusable Workflow
+name: My Starter Workflow
 
 on:
-  workflow_call:
-    inputs:
-      node:
-        required: true
-        type: string
+  workflow_dispatch:
 
 jobs:
   build:
@@ -14,11 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Output the input value
+      - name: Run a multi-line script
         run: |
-          echo "The node version to use is: ${{ inputs.node }}"
-
-  call-reusable:             
-    uses: ./.github/workflows/reusable-workflow.yml
-    with:
-      node: 14
+          echo Add other actions to build,
+          echo test, and deploy to your project.
